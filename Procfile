@@ -1,1 +1,1 @@
-worker: bash build.sh && python main.py
+worker: python all.py
