@@ -1,0 +1,19 @@
+services:
+  - type: worker
+    name: privacy-bot
+    env: python
+    region: frankfurt
+    plan: free
+    
+    buildCommand: >
+      apt-get update &&
+      apt-get install -y libjpeg-dev zlib1g-dev libpng-dev &&
+      pip install -r requirements.txt
+    
+    startCommand: python main.py
+    
+    envVars:
+      - key: BOT_TOKEN
+        value: your_token_here
+      - key: BOT_PASSWORD
+        value: your_password_here
